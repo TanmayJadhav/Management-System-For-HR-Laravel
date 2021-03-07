@@ -1,0 +1,80 @@
+"id","name","created_at","updated_at"
+"1","India",NULL,NULL
+"2","Australia",NULL,NULL
+"3","Africa",NULL,NULL
+"4","United States Of America",NULL,NULL
+"id","name","location_id","created_at","updated_at"
+"1","Banking & Financial Services","1",NULL,NULL
+"2","Communications, Media & Technology
+","1",NULL,NULL
+"3","Life Sciences & Healthcare
+","3",NULL,NULL
+"4","Travel, Transportation & Hospitality","2",NULL,NULL
+"5","Consumer Goods & Distribution
+","4",NULL,NULL
+"6","Energy, Resources & Utilities
+","4",NULL,NULL
+"7","Insurance
+","2",NULL,NULL
+"8","Manufacturing
+","3",NULL,NULL
+"9","Retail","3",NULL,NULL
+"id","fname","lname","email","ph_number","hire_date","job_id","salary","manager_id","department_id","project_id","created_at","updated_at"
+"1","Sumit","Kulkarni","sumit23@gmail.com","9876545676","2019-09-11","1","4","4","2","4",NULL,NULL
+"2","Rahul ","Jain","rahulj@gmail.com","8790654567","2020-01-2","3","6","3","1","2",NULL,NULL
+"3","Ronita ","Banerji","ronita33@yahoo.in","9987556790","2019-09-8","6","6","2","9",NULL,NULL,NULL
+"4","Pratik","Patil","pratik@gmail.com","8879867657","2021-01-2","4","5","1","5",NULL,NULL,NULL
+"5","Omkar","Ambapkar","omkar30@gmail.com","8790523466","2020-08-11","5","7","4","2","4",NULL,NULL
+"6","Sahil","Shaikh","sahil10@gmail.com","8890761232","2020-05-1","2","5","4","2","4",NULL,NULL
+"id","uuid","connection","queue","payload","exception","failed_at"
+"id","title","salary","created_at","updated_at"
+"1","Jr. Software Developer","4",NULL,NULL
+"2","Sr. Software Developer","5",NULL,NULL
+"3","Data Analyst","6",NULL,NULL
+"4","Program Manager","5",NULL,NULL
+"5","Database Manager","7",NULL,NULL
+"6","Marketing Manager","6",NULL,NULL
+"id","address","pincode","city","country_id","created_at","updated_at"
+"1","Office No: 104,
+Godrej Millennium,
+9, Koregaon Park Road,
+Maharashtra ","411001","Mumbai","1",NULL,NULL
+"2","The Executive Centre,
+Level 25,
+108 St Georges Terrace,
+Perth, WA 6000,
+Western Australia","6000","Perth","2",NULL,NULL
+"3","Unit WB02
+Tannery Park
+West Block
+23 Belmont Road
+Rondebosch 7700","7700","Rondebosch","3",NULL,NULL
+"4","7979 E Tufts Avenue,
+Suite 1200. Denver,
+Colorado
+","80237","Colorado","4",NULL,NULL
+"id","name","project_id","created_at","updated_at"
+"1","Ravindra Prasad","2",NULL,NULL
+"2","Robin Singh","4",NULL,NULL
+"3","Pranjal Patel","1",NULL,NULL
+"4","Ritesh Raje","5",NULL,NULL
+"5","Shivani Gaikwad","3",NULL,NULL
+"id","migration","batch"
+"1","2014_10_12_000000_create_users_table","1"
+"2","2014_10_12_100000_create_password_resets_table","1"
+"3","2019_08_19_000000_create_failed_jobs_table","1"
+"4","2021_03_06_095036_create_employees_table","1"
+"5","2021_03_06_100531_create_countries_table","1"
+"6","2021_03_06_100721_create_managers_table","1"
+"7","2021_03_06_172534_create_departments_table","1"
+"8","2021_03_06_172755_create_jobs_table","1"
+"9","2021_03_06_173324_create_locations_table","1"
+"10","2021_03_06_173548_create_projects_table","1"
+"email","token","created_at"
+"id","name","start_date","end_date","status","created_at","updated_at"
+"1","Shield Against SQL Injection","2020-05-2","2020-11-6","Completed",NULL,NULL
+"2","Face Recognition Bot","2020-11-23",,"In Progress",NULL,NULL
+"3","Smart Agriculture System","2019-03-12","2020-05-12","Completed",NULL,NULL
+"4","SEO-friendly website","2021-01-21",,"In Progress",NULL,NULL
+"5","Home Automation System","2021-02-1",,"In Progress",NULL,NULL
+"id","name","email","email_verified_at","password","remember_token","created_at","updated_at"
