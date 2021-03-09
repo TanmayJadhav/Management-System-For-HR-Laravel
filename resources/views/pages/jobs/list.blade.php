@@ -60,7 +60,11 @@
                     </div>
                   </div>
                 </th>
-                <td>{{$job->salary}}</td>
+                <td>
+                  <div class="ml-3">
+                  {{$job->salary}}
+                  </div>
+                </td>
                 <!-- <td>
                   <span>{{$job->ph_number}}</span>
                 </td>

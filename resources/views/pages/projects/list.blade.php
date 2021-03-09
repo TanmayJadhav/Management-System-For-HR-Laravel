@@ -40,10 +40,11 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
+                <th scope="col">Budget</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
                 <th scope="col">Status</th>
-                <!-- <th scope="col">Hire Date</th> -->
+                <th scope="col">Completion</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -60,20 +61,26 @@
                     </div>
                   </div>
                 </th>
+                <td>{{$project->budget}}</td>
                 <td>{{$project->start_date}}</td>
                 <td>
                   <span>{{$project->end_date}}</span>
                 </td>
                 <td>
-                  <div class="ml-4">
+                  <div>
                   {{$project->status}}
                   </div>
                 </td>
-                <!-- <td>
+                <td>
                   <div class="d-flex align-items-center">
-                    {{$project->hire_date}}
+                    <span class="completion mr-2">{{$project->completion_percent}}%</span>
+                    <div>
+                      <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{$project->completion_percent}}%;"></div>
+                      </div>
+                    </div>
                   </div>
-                </td> -->
+                </td>
                 <td>
                   <a class="btn btn-warning" href="#">Edit</a>
                   </div>

@@ -40,11 +40,9 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
+                <th scope="col">Email</th>
                 <th scope="col">Project</th>
-                <!-- <th scope="col">Email</th>
-                <th scope="col">Mobile Number</th>
                 <th scope="col">Salary(LPA)</th>
-                <th scope="col">Hire Date</th> -->
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -61,21 +59,14 @@
                     </div>
                   </div>
                 </th>
+                <td >{{$manager->email}}</td>
                 <td>{{$manager->project_id}}</td>
-                <!-- <td>{{$manager->email}}</td>
-                <td>
-                  <span>{{$manager->ph_number}}</span>
-                </td>
                 <td>
                   <div class="ml-4">
                   {{$manager->salary}}
                   </div>
                 </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    {{$manager->hire_date}}
-                  </div>
-                </td> -->
+                
                 <td>
                   <a class="btn btn-warning" href="#">Edit</a>
                   </div>
