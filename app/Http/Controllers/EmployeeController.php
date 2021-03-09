@@ -14,4 +14,29 @@ class EmployeeController extends Controller
 
         return view("pages.employees.list",compact('employee'));
     }
+
+    public function get_employee_details(Request $request)     // to get details of employee
+    {    
+        $id = $request->input('employee_id');
+        
+        $employee = Employee::find($id);
+
+        switch ($request->input('action')) {
+            case 'employee_details':
+
+                return view("pages.employees.employee_details",compact('employee'));
+
+            case 'employee_edit':
+                $employee = Employee::all();
+                return view("pages.employees.list",compact('employee'));
+
+        }        
+
+        $id = $request->input('employee_id');
+        
+        $employee = Employee::find($id);
+
+        // return view("pages.employees.employee_details",compact('employee'));
+    }
+
 }

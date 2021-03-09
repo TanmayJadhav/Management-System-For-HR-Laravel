@@ -12,13 +12,13 @@
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Table</a></li>
-              <li class="breadcrumb-item active" aria-current="page">List</li>
+              <li class="breadcrumb-item"><a href="#">Edit</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Employee Name</li>
             </ol>
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn  btn-neutral">Add New Employee</a>
+          <a href="/employee/list" class="btn  btn-neutral">Back</a>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
               </tr>
             </thead>
             <tbody class="list">
-            @foreach ($employee as $employee)
+            
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
@@ -75,19 +75,12 @@
                   </div>
                 </td>
                 <td>
-                <form method="POST" action="/employee_details">
-                @csrf
-                  <input type="hidden" name="employee_id" value="{{$employee->id}}">
-                  <button class="btn btn-success" type="submit" name="action" value="employee_details">View</a>
-                  <button class="btn btn-warning" type="submit" name="action" value="employee_edit">Edit</a>
-                </form>
+                  <a class="btn btn-success" href="#">View</a>
+                  <a class="btn btn-warning" href="#">Edit</a>
+                  </div>
                 </td>
               </tr>
-
               
-                
-              
-              @endforeach
             </tbody>
           </table>
         </div>
@@ -98,3 +91,4 @@
 
 
 @stop()
+
