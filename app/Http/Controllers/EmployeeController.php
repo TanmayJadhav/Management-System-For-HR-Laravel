@@ -24,19 +24,24 @@ class EmployeeController extends Controller
         $id = $request->input('employee_id');
         
         $employee = Employee::find($id);
-        $job = Job::find($employee->job_id);
-        $manager = Manager::find($employee->manager_id);
-        $department = Department::find($employee->department_id);
-        $project = Project::find($employee->project_id);
+        
 
         switch ($request->input('action')) {
             case 'employee_details':
+                $job = Job::find($employee->job_id);
+                $manager = Manager::find($employee->manager_id);
+                $department = Department::find($employee->department_id);
+                $project = Project::find($employee->project_id);
 
                 return view("pages.employees.employee_details",compact('employee','job','manager','department','project'));
 
             case 'employee_edit':
-                $employee = Employee::all();
-                return view("pages.employees.list",compact('employee'));
+                
+                $job = Job::all();
+                $manager = Manager::all();
+                $department = Department::all();
+                $project = Project::all();
+                return view("pages.employees.edit",compact('employee','job','manager','department','project'));
 
         }        
 
