@@ -25,12 +25,14 @@
   <!-- Sidenav -->
     <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
         <div class="scrollbar-inner">
+        
         <!-- Brand -->
             <div class="sidenav-header  align-items-center">
                 <a class="navbar-brand" href="/">
                     <h2>Welcome HR</h2>
                 </a>
             </div>
+            
             <div class="navbar-inner">
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="sidenav-collapse-main">

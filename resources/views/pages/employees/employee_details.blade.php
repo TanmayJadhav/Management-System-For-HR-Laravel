@@ -8,12 +8,12 @@
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-          <h6 class="h2 text-white d-inline-block mb-0">Employees</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Employee</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Edit</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Employee Name</li>
+              <li class="breadcrumb-item"><a href="#">Employee</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Details</li>
             </ol>
           </nav>
         </div>
@@ -33,57 +33,90 @@
       <div class="card">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">Employees List</h3>
+          <h3 class="mb-0">Employees Profile</h3>
         </div>
-        <div class="table-responsive ">
-          <table class="table align-items-center table-flush datatable">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Salary(LPA)</th>
-                <th scope="col">Hire Date</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody class="list">
-            
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
-                    </a>
-                    <div class="media-body">
-                      <span class="name mb-0 text-sm">{{$employee->fname}} {{$employee->lname}}</span>
+        <hr class="my-1" />
+        <div class="card-body ">
+          <form>
+            <h6 class="heading text-muted mb-4">User information</h6>
+            <div class="pl-lg-4 ">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="fname">First Name</label>
+                    <input type="text"  class="form-control" readonly value="{{$employee->fname}}">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="lname">Last Name</label>
+                    <input type="text"  class="form-control" readonly value="{{$employee->lname}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="email">Email</label>
+                    <input type="email"  class="form-control" readonly  value="{{$employee->email}}">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="mobile number">Mobile Number</label>
+                    <input type="text"  class="form-control" readonly  value="{{$employee->ph_number}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="hire date">Hire Date</label>
+                      <input type="text"  class="form-control" readonly value="{{$employee->hire_date}}">
                     </div>
                   </div>
-                </th>
-                <td>{{$employee->email}}</td>
-                <td>
-                  <span>{{$employee->ph_number}}</span>
-                </td>
-                <td>
-                  <div class="ml-4">
-                  {{$employee->salary}}
+                  <div class="col-4">
+                    <div class="form-group">
+                        <label class="form-control-label" for="job">Role</label>
+                        <input type="text"  class="form-control" readonly value="{{$job->title}}">
+                    </div>
                   </div>
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    {{$employee->hire_date}}
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="salary">Salary(LPA)</label>
+                      <input type="text"  class="form-control" readonly value="{{$employee->salary}}">
+                    </div>
                   </div>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="#">View</a>
-                  <a class="btn btn-warning" href="#">Edit</a>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="manager">Manager</label>
+                    <input type="text"  class="form-control" readonly value="{{$manager->name}}">
                   </div>
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="department">Department</label>
+                      <input type="text"  class="form-control" readonly value="{{$department->name}}">
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="project">Project</label>
+                      @if($employee->project_id == 0)
+                      <input type="text"  class="form-control" readonly value="None">
+                      @else
+                      <input type="text"  class="form-control" readonly value="{{$project->name}}">
+                      @endif
+                    </div>
+                  </div>
+                </div>
+              </div>
+                            
+            </div> 
+          </form> 
+        </div>         
       </div>
     </div>
   </div>
