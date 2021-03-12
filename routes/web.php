@@ -12,7 +12,11 @@ Route::get('/', [Controller::class,'dashboard']);
 
 //Employees Routes
 Route::get('/employee/list', [EmployeeController::class,'get_employee_list']);
+Route::get('/employee/add', [EmployeeController::class,'get_employee_add_page']);
+Route::post('/employee/add', [EmployeeController::class,'employee_add']);
 Route::post('/employee_details', [EmployeeController::class,'get_employee_details']);
+Route::post('/employee_edit', [EmployeeController::class,'employee_edit'])->name('edit employee');
+
 
 //Manager Routes
 Route::get('/manager/list', [ManagerController::class,'get_manager_list']);

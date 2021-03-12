@@ -11,14 +11,14 @@
           <h6 class="h2 text-white d-inline-block mb-0">Employees</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Table</a></li>
+              <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="/employee/list">Employee</a></li>
               <li class="breadcrumb-item active" aria-current="page">List</li>
             </ol>
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn  btn-neutral">Add New Employee</a>
+          <a href="/employee/add" class="btn  btn-neutral">Add New Employee</a>
         </div>
       </div>
     </div>
@@ -78,15 +78,11 @@
                 <form method="POST" action="/employee_details">
                 @csrf
                   <input type="hidden" name="employee_id" value="{{$employee->id}}">
-                  <button class="btn btn-success" type="submit" name="action" value="employee_details">View</a>
-                  <button class="btn btn-warning" type="submit" name="action" value="employee_edit">Edit</a>
+                  <button class="btn btn-success" type="submit" name="action" value="employee_details">View</button>
+                  <button class="btn btn-warning" type="submit" name="action" value="employee_edit">Edit</button>
                 </form>
                 </td>
               </tr>
-
-              
-                
-              
               @endforeach
             </tbody>
           </table>

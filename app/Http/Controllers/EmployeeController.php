@@ -27,7 +27,9 @@ class EmployeeController extends Controller
         
 
         switch ($request->input('action')) {
+
             case 'employee_details':
+
                 $job = Job::find($employee->job_id);
                 $manager = Manager::find($employee->manager_id);
                 $department = Department::find($employee->department_id);
@@ -41,15 +43,96 @@ class EmployeeController extends Controller
                 $manager = Manager::all();
                 $department = Department::all();
                 $project = Project::all();
+
                 return view("pages.employees.edit",compact('employee','job','manager','department','project'));
 
         }        
-
-        $id = $request->input('employee_id');
-        
-        $employee = Employee::find($id);
-
-        // return view("pages.employees.employee_details",compact('employee'));
     }
+
+    public function employee_edit(Request $request)
+    {
+        $id = $request->input('employee_id');
+
+        $employee = Employee::find($id);
+        $job = Job::all();
+        $manager = Manager::all();
+        $department = Department::all();
+        $project = Project::all();
+
+        if (
+        Employee::where('id', $id)
+                ->update(['fname' => $request->input('fname'),
+                          'lname' => $request->input('lname'),
+                          'email' => $request->input('email'),
+                          'ph_number' => $request->input('ph_number'),
+                          'hire_date' => $request->input('hire_date'),
+                          'job_id' => $request->input('job_id'),
+                          'salary' => $request->input('salary'),
+                          'manager_id' => $request->input('manager_id'),
+                          'department_id' => $request->input('department_id'),
+                          'project_id' => $request->input('project_id')
+                        ])
+        )  
+        {   $success = 'Profile Updated';
+            return view("pages.employees.edit",compact('employee','job','manager','department','project','success'),['success']);
+        //    return redirect()->route('edit employee')->with(compact('employee','job','manager','department','project'),'success','Profile Updated');
+        } 
+        
+        else
+        {
+            $error = 'Profile Update Failed . Try Again !!';
+            return view("pages.employees.edit",compact('employee','job','manager','department','project','success'),['error']);
+
+        }
+    }
+
+    public function get_employee_add_page()
+    {
+        $job = Job::all();
+        $manager = Manager::all();
+        $department = Department::all();
+        $project = Project::all();
+
+        return view("pages.employees.add",compact('job','manager','department','project'));
+    }
+
+    public function employee_add(Request $request)
+    {
+        
+        $employee = new Employee;
+        $employee->fname = $request->input('fname');
+        $employee->lname = $request->input('lname');
+        $employee->email = $request->input('email');
+        $employee->ph_number = $request->input('ph_number');
+        $employee->hire_date = $request->input('hire_date');
+        $employee->job_id = $request->input('job_id');
+        $employee->salary = $request->input('salary');
+        $employee->manager_id = $request->input('manager_id');
+        $employee->department_id = $request->input('department_id');
+        $employee->project_id = $request->input('project_id');
+
+        $job = Job::all();
+        $manager = Manager::all();
+        $department = Department::all();
+        $project = Project::all();
+
+        if($employee->save())
+        {
+            $success = 'Employee Added';
+            return view("pages.employees.add",compact('job','manager','department','project'),['success']);  
+        }
+
+        else{
+            $error = 'Try Again Later';
+            return view("pages.employees.add",compact('job','manager','department','project'),['error']);  
+        }
+
+        
+
+        
+                    
+    }
+
+
 
 }

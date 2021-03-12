@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2021 at 09:18 AM
+-- Generation Time: Mar 12, 2021 at 10:48 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -102,10 +102,10 @@ CREATE TABLE `employees` (
 INSERT INTO `employees` (`id`, `fname`, `lname`, `email`, `ph_number`, `hire_date`, `job_id`, `salary`, `manager_id`, `department_id`, `project_id`, `created_at`, `updated_at`) VALUES
 (1, 'Sumit', 'Kulkarni', 'sumit23@gmail.com', 9876545676, '2019-09-11', 1, 4, 4, 2, 4, NULL, NULL),
 (2, 'Rahul ', 'Jain', 'rahulj@gmail.com', 8790654567, '2020-01-2', 3, 6, 3, 1, 2, NULL, NULL),
-(3, 'Ronita ', 'Banerji', 'ronita33@yahoo.in', 9987556790, '2019-09-8', 6, 6, 2, 9, NULL, NULL, NULL),
-(4, 'Pratik', 'Patil', 'pratik@gmail.com', 8879867657, '2021-01-2', 4, 5, 1, 5, NULL, NULL, NULL),
+(3, 'Ronita ', 'Banerji', 'ronita33@yahoo.in', 9987556790, '08-09-2019', 6, 6, 2, 9, 0, NULL, NULL),
+(4, 'Pratik', 'Patil', 'pratik@gmail.com', 8879867657, '2021-01-2', 4, 5, 1, 5, 0, NULL, NULL),
 (5, 'Omkar', 'Ambapkar', 'omkar30@gmail.com', 8790523466, '2020-08-11', 5, 7, 4, 2, 4, NULL, NULL),
-(6, 'Sahil', 'Shaikh', 'sahil10@gmail.com', 8890761232, '2020-05-1', 2, 5, 4, 2, 4, NULL, NULL);
+(6, 'Sahil', 'Shaikh', 'sahil10@gmail.com', 8890761232, '2020-05-1', 2, 5, 4, 2, 6, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ CREATE TABLE `managers` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `salary` int(11) NOT NULL ,
+  `salary` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -195,12 +195,14 @@ CREATE TABLE `managers` (
 -- Dumping data for table `managers`
 --
 
-INSERT INTO `managers` (`id`, `name`, `project_id`, `created_at`, `updated_at`) VALUES
-(1, 'Ravindra Prasad', 2, NULL, NULL),
-(2, 'Robin Singh', 4, NULL, NULL),
-(3, 'Pranjal Patel', 1, NULL, NULL),
-(4, 'Ritesh Raje', 5, NULL, NULL),
-(5, 'Shivani Gaikwad', 3, NULL, NULL);
+INSERT INTO `managers` (`id`, `name`, `email`, `salary`, `project_id`, `created_at`, `updated_at`) VALUES
+(1, 'Ravindra Prasad', 'raviprasad@gmail.com', 6, 2, NULL, NULL),
+(2, 'Robin Singh', 'robins21@gmail.com', 5, 4, NULL, NULL),
+(3, 'Pranjal Patel', 'pranjal33@gmail.com', 7, 1, NULL, NULL),
+(4, 'Ritesh Raje', 'rraje@gmail.com', 7, 5, NULL, NULL),
+(5, 'Shivani Gaikwad', 'shivani234@gmail.com', 8, 3, NULL, NULL),
+(6, 'Sameer Joshi', 'sam28@gmail.com', 5, 6, NULL, NULL),
+(7, 'Anup Patel', 'anup00@gmail.com', 5, 6, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -264,12 +266,13 @@ CREATE TABLE `projects` (
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `name`, `start_date`, `end_date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Shield Against SQL Injection', '2020-05-2', '2020-11-6', 'Completed', NULL, NULL),
-(2, 'Face Recognition Bot', '2020-11-23', '', 'In Progress', NULL, NULL),
-(3, 'Smart Agriculture System', '2019-03-12', '2020-05-12', 'Completed', NULL, NULL),
-(4, 'SEO-friendly website', '2021-01-21', '', 'In Progress', NULL, NULL),
-(5, 'Home Automation System', '2021-02-1', '', 'In Progress', NULL, NULL);
+INSERT INTO `projects` (`id`, `name`, `start_date`, `end_date`, `status`, `completion_percent`, `budget`, `created_at`, `updated_at`) VALUES
+(1, 'Shield Against SQL Injection', '2020-05-2', '2020-11-6', 'Completed', 100, 300000, NULL, NULL),
+(2, 'Face Recognition Bot', '2020-11-23', '', 'In Progress', 60, 400000, NULL, NULL),
+(3, 'Smart Agriculture System', '2019-03-12', '2020-05-12', 'Completed', 100, 350000, NULL, NULL),
+(4, 'SEO-friendly website', '2021-01-21', '', 'In Progress', 50, 75000, NULL, NULL),
+(5, 'Home Automation System', '2021-02-1', '', 'In Progress', 75, 120000, NULL, NULL),
+(6, 'E-Commerce Website', '2021-03-1', '', 'In Progress', 20, 50000, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -405,7 +408,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `managers`
 --
 ALTER TABLE `managers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -417,7 +420,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

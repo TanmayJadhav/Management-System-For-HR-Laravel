@@ -11,8 +11,8 @@
           <h6 class="h2 text-white d-inline-block mb-0">Employee</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Employee</a></li>
+              <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="/employee/list">Employee</a></li>
               <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
           </nav>
@@ -26,7 +26,6 @@
 </div>
 
 
-
 <div class="container-fluid mt--6">
   <div class="row">
     <div class="col">
@@ -37,20 +36,34 @@
         </div>
         <hr class="my-1" />
         <div class="card-body ">
-          <form>
+          <form method="POST" action="/employee_edit">
+          @csrf
+            <input type="hidden" name="employee_id" value="{{$employee->id}}">
+            @if (!empty($success))
+            <div class="alert alert-success alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>	
+              <strong>{{ $success }}</strong>
+            </div>
+            @endif
+            @if (!empty($error))
+            <div class="alert alert-warning alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>	
+              <strong>{{ $error }}</strong>
+            </div>
+            @endif
             <h6 class="heading text-muted mb-4">Edit Employee details</h6>
             <div class="pl-lg-4 ">
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
                     <label class="form-control-label" for="fname">First Name</label>
-                    <input type="text"  class="form-control"  value="{{$employee->fname}}">
+                    <input type="text"  class="form-control" name="fname" value="{{$employee->fname}}">
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="form-group">
                     <label class="form-control-label" for="lname">Last Name</label>
-                    <input type="text"  class="form-control"  value="{{$employee->lname}}">
+                    <input type="text"  class="form-control" name="lname" value="{{$employee->lname}}">
                   </div>
                 </div>
               </div>
@@ -58,13 +71,13 @@
                 <div class="col-6">
                   <div class="form-group">
                     <label class="form-control-label" for="email">Email</label>
-                    <input type="email"  class="form-control"   value="{{$employee->email}}">
+                    <input type="email"  class="form-control" name="email"  value="{{$employee->email}}">
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="form-group">
                     <label class="form-control-label" for="mobile number">Mobile Number</label>
-                    <input type="text"  class="form-control"   value="{{$employee->ph_number}}">
+                    <input type="text"  class="form-control" name="ph_number"  value="{{$employee->ph_number}}">
                   </div>
                 </div>
               </div>
@@ -72,7 +85,7 @@
                 <div class="col-4">
                     <div class="form-group">
                       <label class="form-control-label" for="hire date">Hire Date</label>
-                      <input type="text"  class="form-control"  value="{{$employee->hire_date}}">
+                      <input type="date"  class="form-control"name="hire_date" value = "{{ Carbon\Carbon::parse($employee->hire_date)->format('Y-m-d') }}" >
                     </div>
                   </div>
                   <div class="col-4">
@@ -88,7 +101,7 @@
                   <div class="col-4">
                     <div class="form-group">
                       <label class="form-control-label" for="salary">Salary(LPA)</label>
-                      <input type="text"  class="form-control"  value="{{$employee->salary}}">
+                      <input type="text"  class="form-control" name="salary"  value="{{$employee->salary}}">
                     </div>
                   </div>
               </div>
@@ -118,24 +131,18 @@
                   <div class="col-4">
                     <div class="form-group">
                       <label class="form-control-label" for="project">Project</label>
-
-
                       <select name="project_id" class="form-control" >
                         @foreach($project as $project)
                         <option value="{{$project->id}}" {{$project->id == $employee->project_id ? 'selected' : ""}}>{{$project->name}}</option>
                         @endforeach
                         <option value="0" {{ $employee->project_id == 0 ? 'selected' : ""}}>None</option>
                       </select>
-                      <!-- @if($employee->project_id == 0)
-                      <input type="text"  class="form-control"  value="None">
-                      @else
-                      <input type="text"  class="form-control"  value="{{$project->name}}">
-                      @endif -->
+                      
                     </div>
                   </div>
                 </div>
                 <div class="text-center">
-                    <a class="btn  btn-success align-center" href="#">Update</a>
+                    <button class="btn  btn-success align-center" >Update</button>
                 </div>    
               </div>
                             
