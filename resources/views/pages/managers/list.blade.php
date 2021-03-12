@@ -49,10 +49,8 @@
             <tbody class="list">
             @php
             $i=0;
-            $j=3;
             @endphp
             @foreach ($manager as $manager)
-           
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
