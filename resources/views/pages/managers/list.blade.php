@@ -47,7 +47,12 @@
               </tr>
             </thead>
             <tbody class="list">
+            @php
+            $i=0;
+            $j=3;
+            @endphp
             @foreach ($manager as $manager)
+           
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
@@ -60,7 +65,7 @@
                   </div>
                 </th>
                 <td >{{$manager->email}}</td>
-                <td>{{$manager->project_id}}</td>
+                <td>{{$project[$i++]->name}}</td>
                 <td>
                   <div class="ml-4">
                   {{$manager->salary}}
@@ -73,6 +78,7 @@
                 </td>
               </tr>
               @endforeach
+              
             </tbody>
           </table>
         </div>

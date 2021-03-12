@@ -32,6 +32,8 @@
                     <h2>Welcome HR</h2>
                 </a>
             </div>
+        
+
             
             <div class="navbar-inner">
                 <!-- Collapse -->

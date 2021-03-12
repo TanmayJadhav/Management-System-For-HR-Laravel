@@ -14,4 +14,9 @@ class Manager extends Model
         'name',
         'project_id'
     ];
+
+    public function project()
+    {
+        return $this->hasOne(Project::class , 'id', 'project_id');
+    }
 }

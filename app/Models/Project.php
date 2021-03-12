@@ -16,4 +16,6 @@ class Project extends Model
         'end_date',
         'status'
     ];
+
+    
 }

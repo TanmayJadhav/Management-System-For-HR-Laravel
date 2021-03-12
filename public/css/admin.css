@@ -6595,7 +6595,7 @@ input[type='button'].btn-block
     padding: .5rem .75rem;
 
     color: #8898aa;
-    border: 1px solid #dee2e6; 
+    /* border: 1px solid #dee2e6;  */
     background-color: #fff;
 }
 .page-link:hover
@@ -20420,7 +20420,7 @@ textarea[resize='horizontal']
 }
 .icon-lg + .icon-text
 {
-    width: calc(100% - $icon-size-lg - 1);
+    width: calc(100% - icon-size-lg - 1);
 }
 
 .icon-sm
@@ -22941,7 +22941,7 @@ textarea[resize='horizontal']
 
     display: flex;
 
-    width: 36px;
+    min-width: 36px;
     height: 36px;
     margin: 0 3px;
     padding: 0;
