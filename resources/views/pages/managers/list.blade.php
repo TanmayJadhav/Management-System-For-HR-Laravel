@@ -63,7 +63,12 @@
                   </div>
                 </th>
                 <td >{{$manager->email}}</td>
-                <td>{{$project[$i++]->name}}</td> 
+                @if ($manager->project_id != 0)
+                <td>{{$project[$i++]->name}}</td>
+                @else
+                <td>None</td>
+                {{$i++}}
+                @endif
                 <td>
                   <div class="ml-4">
                   {{$manager->salary}}

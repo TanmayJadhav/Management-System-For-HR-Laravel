@@ -46,8 +46,8 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group">
-                    <label class="form-control-label" for="fname">Name</label>
-                    <input type="text"  class="form-control" name="fname" >
+                    <label class="form-control-label" for="name">Name</label>
+                    <input type="text"  class="form-control" name="name" >
                   </div>
                 </div>
                 

@@ -17,8 +17,22 @@ class ManagerController extends Controller
         return view("pages.managers.list",compact('manager','project'));
     }
 
-    public function get_manager_add_page(Request $request)
+    public function get_manager_add_page()
     {
+        $project = Project::all();
+        return view("pages.managers.add",compact('project'));
+    }
+
+    public function manager_add(Request $request)
+    {
+        $manager = new Manager;
+        $manager->name = $request->input('name');
+        $manager->email = $request->input('email');
+        $manager->salary = $request->input('salary');
+        $manager->project_id = $request->input('project_id');
+
+        $manager->save();
+
         $project = Project::all();
         return view("pages.managers.add",compact('project'));
     }
