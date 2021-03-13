@@ -111,28 +111,20 @@ class EmployeeController extends Controller
         $employee->department_id = $request->input('department_id');
         $employee->project_id = $request->input('project_id');
 
-        $job = Job::all();
-        $manager = Manager::all();
-        $department = Department::all();
-        $project = Project::all();
 
         if($employee->save())
-        {
+        {   
+            $employee = Employee::all();
             $success = 'Employee Added';
-            return view("pages.employees.add",compact('job','manager','department','project'),['success']);  
+            return view("pages.employees.list",compact('employee','success'));  
         }
 
         else{
+            $employee = Employee::all();
             $error = 'Try Again Later';
-            return view("pages.employees.add",compact('job','manager','department','project'),['error']);  
+            return view("pages.employees.list",compact('employee','error'));  
         }
-
-        
-
-        
                     
     }
-
-
 
 }

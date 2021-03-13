@@ -34,6 +34,18 @@
         <!-- Card header -->
         <div class="card-header border-0">
           <h3 class="mb-0">Employees List</h3>
+          @if (!empty($success))
+            <br><div class="alert alert-success alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>	
+              <strong>{{ $success }}</strong>
+            </div>
+          @endif
+          @if (!empty($error))
+              <br><div class="alert alert-warning alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>	
+                <strong>{{ $error }}</strong>
+              </div>
+          @endif
         </div>
         <div class="table-responsive ">
           <table class="table align-items-center table-flush datatable">
@@ -75,7 +87,7 @@
                   </div>
                 </td>
                 <td>
-                <form method="POST" action="/employee_details">
+                <form method="POST" action="/employee/details">
                 @csrf
                   <input type="hidden" name="employee_id" value="{{$employee->id}}">
                   <button class="btn btn-success" type="submit" name="action" value="employee_details">View</button>

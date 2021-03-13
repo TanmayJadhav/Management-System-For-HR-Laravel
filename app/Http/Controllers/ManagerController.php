@@ -20,6 +20,7 @@ class ManagerController extends Controller
     public function get_manager_add_page()
     {
         $project = Project::all();
+
         return view("pages.managers.add",compact('project'));
     }
 
@@ -35,5 +36,32 @@ class ManagerController extends Controller
 
         $project = Project::all();
         return view("pages.managers.add",compact('project'));
+    }
+
+    public function get_manager_edit_page(Request $request)
+    {   
+        $id = $request->input('manager_id');
+
+        $manager = Manager::find($id);
+        // dd($manager);
+        $project = Project::all();
+
+        return view("pages.managers.edit",compact('project','manager'));
+    }
+
+    public function manager_edit(Request $request)
+    {   
+        $id = $request->input('manager_id');
+        $manager = Manager::find($id);
+        $project = Project::all();
+        
+        Manager::where('id', $id)
+                ->update(['name' => $request->input('name'),
+                          'salary' => $request->input('salary'),
+                          'email' => $request->input('email'),
+                          'project_id' => $request->input('project_id')
+                        ]);
+
+        return view("pages.managers.edit",compact('project','manager'));               
     }
 }

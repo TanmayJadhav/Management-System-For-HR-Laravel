@@ -67,7 +67,6 @@
                 <td>{{$project[$i++]->name}}</td>
                 @else
                 <td>None</td>
-                {{$i++}}
                 @endif
                 <td>
                   <div class="ml-4">
@@ -76,8 +75,11 @@
                 </td>
                 
                 <td>
-                  <a class="btn btn-warning" href="#">Edit</a>
-                  </div>
+                <form action="/manager/edit" method="get">
+                
+                  <input type="hidden" name="manager_id" value="{{$manager->id}}">
+                  <button class="btn btn-warning">Edit</button>
+                </form>  
                 </td>
               </tr>
               @endforeach

@@ -34,9 +34,9 @@
         <div class="card-header border-0">
           <h3 class="mb-0">Employees Profile</h3>
         </div>
-        <hr class="my-1" />
+        <hr class="my-1"/>
         <div class="card-body ">
-          <form method="POST" action="/employee_edit">
+          <form method="POST" action="/employee/edit">
           @csrf
             <input type="hidden" name="employee_id" value="{{$employee->id}}">
             @if (!empty($success))
