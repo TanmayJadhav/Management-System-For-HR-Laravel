@@ -12,8 +12,14 @@ class ManagerController extends Controller
     {      
         $manager = Manager::all();
         
-        $project = Project::select('projects.name')->join('managers','projects.id','=','managers.project_id')->get();
+        $project = Project::select("projects.name")->join("managers","projects.id","=","managers.project_id")->get();
         // dd($project); 
         return view("pages.managers.list",compact('manager','project'));
+    }
+
+    public function get_manager_add_page(Request $request)
+    {
+        $project = Project::all();
+        return view("pages.managers.add",compact('project'));
     }
 }

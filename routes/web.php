@@ -20,6 +20,8 @@ Route::post('/employee_edit', [EmployeeController::class,'employee_edit'])->name
 
 //Manager Routes
 Route::get('/manager/list', [ManagerController::class,'get_manager_list']);
+Route::get('/manager/add', [ManagerController::class,'get_manager_add_page']);
+Route::post('/manager/add', [ManagerController::class,'manager_add']);
 
 //Department Routes
 Route::get('/department/list', [DepartmentController::class,'get_department_list']);

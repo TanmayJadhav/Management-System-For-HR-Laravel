@@ -18,7 +18,7 @@
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn  btn-neutral">Add New Manager</a>
+          <a href="/manager/add" class="btn  btn-neutral">Add New Manager</a>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
                   </div>
                 </th>
                 <td >{{$manager->email}}</td>
-                <td>{{$project[$i++]->name}}</td>
+                <td>{{$project[$i++]->name}}</td> 
                 <td>
                   <div class="ml-4">
                   {{$manager->salary}}
