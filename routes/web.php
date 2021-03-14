@@ -29,6 +29,8 @@ Route::post('/manager/edit', [ManagerController::class,'manager_edit']);
 Route::get('/department/list', [DepartmentController::class,'get_department_list']);
 Route::get('/department/edit', [DepartmentController::class,'get_department_edit_page']);
 Route::post('/department/edit', [DepartmentController::class,'department_edit']);
+Route::get('/department/add', [DepartmentController::class,'get_department_add_page']);
+Route::post('/department/add', [DepartmentController::class,'department_add']);
 
 //Project Routes
 Route::get('/project/list', [ProjectController::class,'get_project_list']);

@@ -73,11 +73,7 @@ class ManagerController extends Controller
             $project = Project::all();  
             $error = 'Profile Update Failed . Try Again !!';
             return view("pages.managers.edit",compact('project','manager','error'));
-        }
-
-                     
-
-        // return view("pages.managers.edit",compact('project','manager'));
-        // return redirect('/manager/edit')->with([$project,$manager])  ;             
+        }            
     }
+    
 }

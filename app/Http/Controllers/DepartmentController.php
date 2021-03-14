@@ -36,15 +36,43 @@ class DepartmentController extends Controller
         {
             $department = Department::find($id);
             $location = Location::all();
-            $success = 'Profile Updated';
+            $success = 'Department Updated';
             return view("pages.departments.edit",compact('department','location','success'));
         }      
         else{
             $department = Department::find($id);
             $location = Location::all();
-            $error = 'Profile Update Failed . Try Again !!';
+            $error = 'Department Update Failed . Try Again !!';
             return view("pages.departments.edit",compact('department','location','error'));
         }
+    }
 
+    public function get_department_add_page()
+    {
+        $location = Location::all();
+        $department = Department::all();
+
+        return view("pages.departments.add",compact('location','department'));
+    }
+
+    public function department_add(Request $request)
+    {
+        $department = new Department;
+        $department->name = $request->input('name');
+        $department->location_id = $request->input('location_id');
+
+        if($department->save())
+        {
+            $location = Location::all();
+            $department = Department::all();
+            $success = 'Department Added';
+            return view("pages.departments.add",compact('location','department','success'));
+        }
+        else{
+            $location = Location::all();
+            $department = Department::all();
+            $error = 'Department Update Failed . Try Again !!';
+            return view("pages.departments.edit",compact('department','location','error'));
+        }
     }
 }
