@@ -34,7 +34,7 @@
         <!-- Card header -->
         <div class="card-header border-0">
           <h3 class="mb-0">Employees List</h3>
-          @if (!empty($success))
+          <!-- @if (!empty($success))
             <br><div class="alert alert-success alert-block">
               <button type="button" class="close" data-dismiss="alert">×</button>	
               <strong>{{ $success }}</strong>
@@ -45,7 +45,7 @@
                 <button type="button" class="close" data-dismiss="alert">×</button>	
                 <strong>{{ $error }}</strong>
               </div>
-          @endif
+          @endif -->
         </div>
         <div class="table-responsive ">
           <table class="table align-items-center table-flush datatable">

@@ -74,14 +74,13 @@ class EmployeeController extends Controller
             $department = Department::all();
             $project = Project::all();
             $success = 'Profile Updated';
-            return view("pages.employees.edit",compact('employee','job','manager','department','project','success'),['success']);
-        //    return redirect()->route('edit employee')->with(compact('employee','job','manager','department','project'),'success','Profile Updated');
+            return view("pages.employees.edit",compact('employee','job','manager','department','project','success'));
         } 
         
         else
         {
             $error = 'Profile Update Failed . Try Again !!';
-            return view("pages.employees.edit",compact('employee','job','manager','department','project','success'),['error']);
+            return view("pages.employees.edit",compact('employee','job','manager','department','project','error'));
 
         }
     }
@@ -114,15 +113,23 @@ class EmployeeController extends Controller
 
         if($employee->save())
         {   
+            $job = Job::all();
+            $manager = Manager::all();
+            $department = Department::all();
+            $project = Project::all();
             $employee = Employee::all();
             $success = 'Employee Added';
-            return view("pages.employees.list",compact('employee','success'));  
+            return view("pages.employees.add",compact('employee','success','job','manager','department','project'));  
         }
 
         else{
+            $job = Job::all();
+            $manager = Manager::all();
+            $department = Department::all();
+            $project = Project::all();
             $employee = Employee::all();
             $error = 'Try Again Later';
-            return view("pages.employees.list",compact('employee','error'));  
+            return view("pages.employees.add",compact('employee','error','job','manager','department','project'));  
         }
                     
     }
