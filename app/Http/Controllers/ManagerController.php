@@ -33,10 +33,19 @@ class ManagerController extends Controller
         $manager->salary = $request->input('salary');
         $manager->project_id = $request->input('project_id');
 
-        $manager->save();
+        if($manager->save())
+        {
+            $project = Project::all();
+            $success = 'Manager Added';
+            return view("pages.managers.add",compact('project','success'));
+        }
+        else{
+            $project = Project::all();
+            $error = 'Process Failed !!! Try Agian';
+            return view("pages.managers.add",compact('project','error'));
+        }
 
-        $project = Project::all();
-        return view("pages.managers.add",compact('project'));
+        
     }
 
     public function get_manager_edit_page(Request $request)

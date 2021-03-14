@@ -39,7 +39,18 @@
         <div class="card-body ">
           <form method="POST" action="/manager/add" >
           @csrf
-
+            @if (!empty($success))
+            <div class="alert alert-success alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>	
+              <strong>{{ $success }}</strong>
+            </div>
+            @endif
+            @if (!empty($error))
+            <div class="alert alert-warning alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>	
+              <strong>{{ $error }}</strong>
+            </div>
+            @endif
            
             <h6 class="heading text-muted mb-4">Add Manager details</h6>
             <div class="pl-lg-4 ">
