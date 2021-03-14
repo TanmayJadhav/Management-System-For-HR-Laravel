@@ -34,18 +34,6 @@
         <!-- Card header -->
         <div class="card-header border-0">
           <h3 class="mb-0">Employees List</h3>
-          <!-- @if (!empty($success))
-            <br><div class="alert alert-success alert-block">
-              <button type="button" class="close" data-dismiss="alert">×</button>	
-              <strong>{{ $success }}</strong>
-            </div>
-          @endif
-          @if (!empty($error))
-              <br><div class="alert alert-warning alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>	
-                <strong>{{ $error }}</strong>
-              </div>
-          @endif -->
         </div>
         <div class="table-responsive ">
           <table class="table align-items-center table-flush datatable">
@@ -64,9 +52,7 @@
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
-                    </a>
+                      <img class="avatar  mr-3" alt="Image placeholder"  src="\img\employee.png">
                     <div class="media-body">
                       <span class="name mb-0 text-sm">{{$employee->fname}} {{$employee->lname}}</span>
                     </div>
