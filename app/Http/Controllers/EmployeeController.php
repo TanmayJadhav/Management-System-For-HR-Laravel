@@ -53,12 +53,6 @@ class EmployeeController extends Controller
     {
         $id = $request->input('employee_id');
 
-        $employee = Employee::find($id);
-        $job = Job::all();
-        $manager = Manager::all();
-        $department = Department::all();
-        $project = Project::all();
-
         if (
         Employee::where('id', $id)
                 ->update(['fname' => $request->input('fname'),
@@ -73,7 +67,13 @@ class EmployeeController extends Controller
                           'project_id' => $request->input('project_id')
                         ])
         )  
-        {   $success = 'Profile Updated';
+        {  
+            $employee = Employee::find($id);
+            $job = Job::all();
+            $manager = Manager::all();
+            $department = Department::all();
+            $project = Project::all();
+            $success = 'Profile Updated';
             return view("pages.employees.edit",compact('employee','job','manager','department','project','success'),['success']);
         //    return redirect()->route('edit employee')->with(compact('employee','job','manager','department','project'),'success','Profile Updated');
         } 

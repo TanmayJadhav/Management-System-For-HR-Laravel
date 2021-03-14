@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Manager;
 use App\Models\Project;
 
+
 class ManagerController extends Controller
 {
     public function get_manager_list()   // to get list of managers
@@ -52,16 +53,31 @@ class ManagerController extends Controller
     public function manager_edit(Request $request)
     {   
         $id = $request->input('manager_id');
-        $manager = Manager::find($id);
-        $project = Project::all();
         
-        Manager::where('id', $id)
+        
+       if( Manager::where('id', $id)
                 ->update(['name' => $request->input('name'),
                           'salary' => $request->input('salary'),
                           'email' => $request->input('email'),
                           'project_id' => $request->input('project_id')
-                        ]);
+                        ])
+        )          
+        {
+            $manager = Manager::find($id);
+            $project = Project::all();  
+            $success = 'Profile Updated';
+            return view("pages.managers.edit",compact('project','manager','success'));
+        }      
+        else{
+            $manager = Manager::find($id);
+            $project = Project::all();  
+            $error = 'Profile Update Failed . Try Again !!';
+            return view("pages.managers.edit",compact('project','manager','error'));
+        }
 
-        return view("pages.managers.edit",compact('project','manager'));               
+                     
+
+        // return view("pages.managers.edit",compact('project','manager'));
+        // return redirect('/manager/edit')->with([$project,$manager])  ;             
     }
 }

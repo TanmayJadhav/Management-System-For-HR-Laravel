@@ -8,17 +8,17 @@
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
-          <h6 class="h2 text-white d-inline-block mb-0">Manager</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">Department</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
               <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="/manager/list">Manager</a></li>
+              <li class="breadcrumb-item"><a href="/department/list">Department</a></li>
               <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="/manager/list" class="btn  btn-neutral">Back</a>
+          <a href="/department/list" class="btn  btn-neutral">Back</a>
         </div>
       </div>
     </div>
@@ -33,13 +33,13 @@
       <div class="card">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">Manager Profile</h3>
+          <h3 class="mb-0">Department Edit</h3>
         </div>
         <hr class="my-1" />
         <div class="card-body ">
-          <form method="POST" action="/manager/edit" >
+          <form method="POST" action="/department/edit" >
           @csrf
-            <input type="hidden" name="manager_id" value="{{$manager->id}}">
+            <input type="hidden" name="department_id" value="{{$department->id}}">
             @if (!empty($success))
             <div class="alert alert-success alert-block">
               <button type="button" class="close" data-dismiss="alert">×</button>	
@@ -52,46 +52,45 @@
               <strong>{{ $error }}</strong>
             </div>
             @endif
-            <h6 class="heading text-muted mb-4">Edit Manager details</h6>
+            <h6 class="heading text-muted mb-4">Edit Department Details</h6>
             <div class="pl-lg-4 ">
               <div class="row">
                 <div class="col">
                   <div class="form-group">
                     <label class="form-control-label" for="name">Name</label>
-                    <input type="text"  class="form-control"  name="name" value="{{$manager->name}}" >
+                    <input type="text"  class="form-control"  name="name" value="{{$department->name}}" >
                   </div>
                 </div>
                 
-              </div>
+              <!-- </div>
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
                     <label class="form-control-label" for="email">Email</label>
-                    <input type="email"  class="form-control" value="{{$manager->email}}" name="email" >
+                    <input type="email"  class="form-control" value="" name="email" >
                   </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
                       <label class="form-control-label" for="salary">Salary(LPA)</label>
-                      <input type="text"  class="form-control" value="{{$manager->salary}}" name="salary"  >
+                      <input type="text"  class="form-control" value="" name="salary"  >
                     </div>
-                </div>
+                </div> -->
               </div>
               <div class="row">
                 <div class="col">
                     <div class="form-group">
-                      <label class="form-control-label" for="project">Project</label>
-                      <select name="project_id" class="form-control" >
-                        @foreach($project as $project)
-                        <option value="{{$project->id}}" {{$project->id == $manager->project_id ? 'selected' : ''}} >{{$project->name}}</option>
+                      <label class="form-control-label" for="project">Location</label>
+                      <select name="location_id" class="form-control" >
+                        @foreach($location as $location)
+                        <option value="{{$location->id}}" {{$location->id == $department->location_id ? 'selected' : ''}} >{{$location->address}}, {{$location->city}}</option>
                         @endforeach
-                        <option value="0" >None</option>
                       </select>  
                     </div>
                 </div>
                </div>
                 <div class="text-center">
-                    <button  type="submit" class="btn  btn-success align-center" >Update</button>    
+                    <button  type="submit"  class="btn  btn-success align-center" >Update</button>    
                 </div>            
             </div> 
           </form> 

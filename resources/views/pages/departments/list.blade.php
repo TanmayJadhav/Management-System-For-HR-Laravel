@@ -39,15 +39,18 @@
           <table class="table align-items-center table-flush datatable">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Location</th>
-                <!-- <th scope="col">Mobile Number</th>
-                <th scope="col">Salary(LPA)</th>
+                <th scope="col">Department Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <!--<th scope="col">Salary(LPA)</th>
                 <th scope="col">Hire Date</th> -->
                 <th scope="col">Action</th> 
               </tr>
             </thead>
             <tbody class="list">
+            @php
+            $i=0
+            @endphp
             @foreach ($department as $department)
               <tr>
                 <th scope="row">
@@ -60,9 +63,9 @@
                     </div>
                   </div>
                 </th>
-                <td>{{$department->location_id}}</td>
-                <!-- <td>{{$department->email}}</td>
-                <td>
+                <td>{{$location[$i]->address}}</td>
+                <td>{{$location[$i++]->city}}</td>
+                                <!--<td>
                   <span>{{$department->ph_number}}</span>
                 </td>
                 <td>
@@ -76,7 +79,11 @@
                   </div>
                 </td> -->
                 <td>
-                  <a class="btn btn-warning" href="#">Edit</a>
+                <form action="/department/edit" method="get">
+                
+                  <input type="hidden" name="department_id" value="{{$department->id}}">
+                  <button class="btn btn-warning" >Edit</button>
+                </form>  
                   </div>
                 </td>
               </tr>
