@@ -52,9 +52,7 @@
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
-                    <a href="#" class="avatar rounded-circle mr-3">
-                      <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
-                    </a>
+                  <img class="avatar mr-3" alt="Image placeholder" width="50" src="/img/job.png">
                     <div class="media-body">
                       <span class="name mb-0 text-sm">{{$job->title}}</span>
                     </div>

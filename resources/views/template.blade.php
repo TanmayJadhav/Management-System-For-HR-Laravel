@@ -42,43 +42,43 @@
                     <ul class="navbar-nav">
                     <li class="nav-item">
                     <a class="nav-link " href="\">
-                        <i class="ni ni-tv-2 text-primary"></i>
+                        <i class="fas fa-desktop"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                     </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/employee/list">
-                            <i class="ni ni-planet text-orange"></i>
+                            <i class="fas fa-users"></i>
                             <span class="nav-link-text">Employees</span>
                         </a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/manager/list">
-                            <i class="ni ni-pin-3 text-primary"></i>
+                            <i class="fas fa-user-tie"></i>
                             <span class="nav-link-text">Managers</span>
                         </a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/department/list">
-                            <i class="ni ni-single-02 text-yellow"></i>
+                            <i class="fas fa-building"></i>
                             <span class="nav-link-text">Departments</span>
                         </a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/project/list">
-                            <i class="ni ni-bullet-list-67 text-default"></i>
+                            <i class="fas fa-project-diagram"></i>
                             <span class="nav-link-text">Projects</span>
                         </a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/job/list">
-                            <i class="ni ni-key-25 text-info"></i>
+                            <i class="fas fa-briefcase"></i>
                             <span class="nav-link-text">Jobs</span>
                         </a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/locations">
-                            <i class="ni ni-circle-08 text-pink"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                             <span class="nav-link-text">Locations</span>
                         </a>
                         </li>
@@ -133,10 +133,10 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="/img/profile.jpg">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                    <span class="mb-0 text-sm  font-weight-bold">Tanmay Jadhav</span>
                   </div>
                 </div>
               </a>
