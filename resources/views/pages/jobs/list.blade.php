@@ -40,7 +40,7 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Salary</th>
+                <!-- <th scope="col">Salary</th> -->
                 <!-- <th scope="col">Mobile Number</th>
                 <th scope="col">Salary(LPA)</th>
                 <th scope="col">Hire Date</th> -->
@@ -60,11 +60,11 @@
                     </div>
                   </div>
                 </th>
-                <td>
+                <!-- <td>
                   <div class="ml-3">
                   {{$job->salary}}
                   </div>
-                </td>
+                </td> -->
                 <!-- <td>
                   <span>{{$job->ph_number}}</span>
                 </td>
