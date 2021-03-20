@@ -80,7 +80,7 @@
                   </div>
                 </td>
                 <td>
-                  <a class="btn btn-warning" href="#">Edit</a>
+                  <a class="btn btn-warning" href="/project/edit/{{$project->id}}">Edit</a>
                   </div>
                 </td>
               </tr>
