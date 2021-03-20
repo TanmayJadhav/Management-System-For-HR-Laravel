@@ -71,7 +71,7 @@
                         @endforeach
                       </select>  
                     </div>
-                    <small  class="form-text text-danger">If new Location , add in Location page first.</small>
+                    <small  class="form-text text-danger">*If new Location , add in Location page first.</small>
                 </div>
                </div>
                 <div class="text-center">

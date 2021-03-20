@@ -35,7 +35,7 @@ Route::post('/department/add', [DepartmentController::class,'department_add']);
 //Project Routes
 Route::get('/project/list', [ProjectController::class,'get_project_list']);
 Route::get('/project/edit/{id}', [ProjectController::class,'get_project_edit_page']);
-Route::post('/project/edit', [ProjectController::class,'project_edit']);
+Route::post('/project/edit/{id}', [ProjectController::class,'project_edit']);
 
 
 //Job Routes

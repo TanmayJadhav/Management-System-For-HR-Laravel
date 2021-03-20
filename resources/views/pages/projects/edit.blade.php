@@ -36,9 +36,9 @@
         </div>
         <hr class="my-1"/>
         <div class="card-body ">
-          <form method="POST" action="/Project/edit">
+          <form method="POST" action="/project/edit/{{$project->id}}">
           @csrf
-            <input type="hidden" name="project_id" value="{$project->id}}">
+            
             @if (!empty($success))
             <div class="alert alert-success alert-block">
               <button type="button" class="close" data-dismiss="alert">×</button>	
@@ -63,10 +63,10 @@
                 <div class="col-6">
                     <label class="form-control-label" for="status">Status</label>
                     <select name="status" class="form-control" >
-                    @foreach($project_status as $project_status)
-                    <option value="{{$project->status}}" {{$project->status == $project_status ? 'selected' : ""}}>{{$project->status}}</option>
-                    @endforeach
+                    <option value="Completed" {{$project->status == "Completed" ? 'selected' : ""}}>Completed</option>
+                    <option value="In Progress" {{$project->status == "In Progress" ? 'selected' : ""}}>In Progress</option>
                     </select>
+                    <small  class="form-text text-danger">*If Project is completed , please add the End Date.</small>
                 </div>    
               </div>
               <div class="row">
@@ -98,6 +98,7 @@
                       @else
                       <input type="date"  class="form-control"name="end_date" value = "{{ Carbon\Carbon::parse($project->end_date)->format('Y-m-d') }}" >
                       @endif
+                      
                     </div>
                   </div>  
                     

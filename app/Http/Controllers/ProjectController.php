@@ -17,10 +17,35 @@ class ProjectController extends Controller
     public function get_project_edit_page(Request $request,$id)
     {
         $project = Project::find($id);
-        $project_status = Project::select("status")->first();
-        // dd($project_status);
         
-        return view("pages.projects.edit",compact('project','project_status'));
+        return view("pages.projects.edit",compact('project'));
+    }
+
+
+    public function project_edit(Request $request,$id)
+    {
+        
+       if( Project::where('id', $id)
+                ->update(['name' => $request->input('name'),
+                          'status' => $request->input('status'),
+                          'start_date' => $request->input('start_date'),
+                          'end_date' => $request->input('end_date'),
+                          'budget' => $request->input('budget'),
+                          'completion_percent' => $request->input('completion_percent')
+                        ])
+        )          
+        {
+            $project = Project::find($id);
+            
+            $success = 'Project Details Updated';
+            return view("pages.projects.edit",compact('project','success'));
+        }      
+        else{
+            $project = Project::find($id);
+            
+            $error = 'Project Details Update Failed . Try Again !!';
+            return view("pages.projects.edit",compact('project','error'));
+        }
     }
 }
 
