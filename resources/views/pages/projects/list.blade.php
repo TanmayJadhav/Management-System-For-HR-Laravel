@@ -11,14 +11,14 @@
           <h6 class="h2 text-white d-inline-block mb-0">Projects</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><a href="#">Table</a></li>
+              <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="/project/list">Project</a></li>
               <li class="breadcrumb-item active" aria-current="page">List</li>
             </ol>
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn  btn-neutral">Add New Project</a>
+          <a href="/project/add" class="btn  btn-neutral">Add New Project</a>
         </div>
       </div>
     </div>
