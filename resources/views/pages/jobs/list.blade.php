@@ -40,9 +40,6 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Name</th>
-                <!-- <th scope="col">Salary</th> -->
-                <!-- <th scope="col">Mobile Number</th>
-                <th scope="col">Salary(LPA)</th>-->
                 <th scope="col"> Job Availability</th> 
                 <th scope="col">Action</th>
               </tr>
@@ -58,19 +55,6 @@
                     </div>
                   </div>
                 </th>
-                <!-- <td>
-                  <div class="ml-3">
-                  {{$job->salary}}
-                  </div>
-                </td> -->
-                <!-- <td>
-                  <span>{{$job->ph_number}}</span>
-                </td>
-                <td>
-                  <div class="ml-4">
-                  {{$job->salary}}
-                  </div>
-                </td>-->
                 <td>
                   <div class="d-flex align-items-center ml-4">
                   @if($job->availability == 1)

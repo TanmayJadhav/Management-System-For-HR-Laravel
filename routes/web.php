@@ -7,6 +7,7 @@ use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\LocationController;
 
 Route::get('/', [Controller::class,'dashboard']);
 
@@ -46,5 +47,9 @@ Route::get('/job/edit/{id}', [JobController::class,'get_job_edit_page']);
 Route::post('/job/edit/{id}', [JobController::class,'job_edit']);
 Route::get('/job/add', [JobController::class,'get_job_add_page']);
 Route::post('/job/add', [JobController::class,'job_add']);
+
+
+//Location Routes
+Route::get('/locations', [LocationController::class,'get_location']);
 
 
