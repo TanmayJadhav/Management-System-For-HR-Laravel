@@ -42,4 +42,9 @@ Route::post('/project/add', [ProjectController::class,'project_add']);
 
 //Job Routes
 Route::get('/job/list', [JobController::class,'get_job_list']);
+Route::get('/job/edit/{id}', [JobController::class,'get_job_edit_page']);
+Route::post('/job/edit/{id}', [JobController::class,'job_edit']);
+Route::get('/job/add', [JobController::class,'get_job_add_page']);
+Route::post('/job/add', [JobController::class,'job_add']);
+
 

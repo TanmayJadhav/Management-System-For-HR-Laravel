@@ -18,7 +18,7 @@
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn  btn-neutral">Add New Job Position</a>
+          <a href="/job/add" class="btn  btn-neutral">Add New Job Position</a>
         </div>
       </div>
     </div>
@@ -42,8 +42,8 @@
                 <th scope="col">Name</th>
                 <!-- <th scope="col">Salary</th> -->
                 <!-- <th scope="col">Mobile Number</th>
-                <th scope="col">Salary(LPA)</th>
-                <th scope="col">Hire Date</th> -->
+                <th scope="col">Salary(LPA)</th>-->
+                <th scope="col"> Job Availability</th> 
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -70,14 +70,18 @@
                   <div class="ml-4">
                   {{$job->salary}}
                   </div>
+                </td>-->
+                <td>
+                  <div class="d-flex align-items-center ml-4">
+                  @if($job->availability == 1)
+                    <span class="name mb-0 text-sm">Yes</span>
+                  @else
+                    <span class="name mb-0 text-sm">No</span>
+                  @endif  
+                  </div>
                 </td>
                 <td>
-                  <div class="d-flex align-items-center">
-                    {{$job->hire_date}}
-                  </div>
-                </td> -->
-                <td>
-                  <a class="btn btn-warning" href="#">Edit</a>
+                  <a class="btn btn-warning" href="/job/edit/{{$job->id}}">Edit</a>
                   </div>
                 </td>
               </tr>

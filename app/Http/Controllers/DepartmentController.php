@@ -72,7 +72,7 @@ class DepartmentController extends Controller
             $location = Location::all();
             $department = Department::all();
             $error = 'Department Update Failed . Try Again !!';
-            return view("pages.departments.edit",compact('department','location','error'));
+            return view("pages.departments.add",compact('department','location','error'));
         }
     }
 }
