@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Location;
 
 class LocationController extends Controller
 {
     public function get_location()
     {
-        return view("pages.locations.map1");
+        $location = Location::all();
+        return view("pages.locations.map", compact('location'));
     }
 }
