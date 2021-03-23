@@ -49,7 +49,9 @@ Route::get('/job/add', [JobController::class,'get_job_add_page']);
 Route::post('/job/add', [JobController::class,'job_add']);
 
 
-//Location Routes
+//Location Routes 
 Route::get('/locations', [LocationController::class,'get_location']);
+Route::get('/location/add', [LocationController::class,'get_location_add_page']);
+Route::post('/location/add', [LocationController::class,'location_add']);
 
 

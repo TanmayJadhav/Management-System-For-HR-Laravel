@@ -17,7 +17,7 @@
           </nav>
         </div>
         <div class="col-lg-6 col-5 text-right">
-          <a href="/job/add" class="btn  btn-neutral">Add New Location</a>
+          <a href="/location/add" class="btn  btn-neutral">Add New Location</a>
         </div>
       </div>
     </div>
@@ -54,16 +54,13 @@
     // zoomOffset: -1,
     // accessToken: 'your.mapbox.access.token'
     noWrap: true
-    
+        
     }).addTo(mymap);
 	 
     @foreach ($location as $location)
     var marker = L.marker([{{$location->latitude}}, {{$location->longitude}}]).addTo(mymap);
     marker.bindPopup("{{$location->city}}").openPopup();
-    @endforeach
-
-    
-    
+    @endforeach    
      
 </script>
 
