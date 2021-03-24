@@ -59,7 +59,7 @@
 	 
     @foreach ($location as $location)
     var marker = L.marker([{{$location->latitude}}, {{$location->longitude}}]).addTo(mymap);
-    marker.bindPopup("{{$location->city}}").openPopup();
+    marker.bindPopup("{{$location->address}}").openPopup();
     @endforeach    
      
 </script>
