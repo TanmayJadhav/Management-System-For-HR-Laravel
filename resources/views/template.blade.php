@@ -48,7 +48,7 @@
                     <!-- Nav items -->
                     <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link " href="\">
+                    <a class="nav-link " href="/dashboard">
                         <i class="fas fa-desktop"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>

@@ -8,8 +8,12 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', [Controller::class,'dashboard']);
+Route::view('/', 'login');
+Route::post('/', [UserController::class,'login']);
+
+Route::get('/dashboard', [Controller::class,'dashboard']);
 
 //Employees Routes
 Route::get('/employee/list', [EmployeeController::class,'get_employee_list'])->name('employee list');
