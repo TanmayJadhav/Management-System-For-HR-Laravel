@@ -23,8 +23,9 @@
   
   .card-signin .card-img-left {
     width: 45%;
+    /* height: 100%; */
     /* Link to your background image using in the property below! */
-    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+    background: scroll center url('/img/login.png');
     background-size: cover;
   }
   

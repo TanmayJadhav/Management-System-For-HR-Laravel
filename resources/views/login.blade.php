@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Bootstrap Registration Page with Floating Labels</title>
+  <title>HR Login</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
@@ -116,15 +116,16 @@
              <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Register</h5>
+            <h5 class="card-title text-center mt-5">Login</h5>
             <form class="form-signin" method="Post" action="/">
             @csrf
-              <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" name="name" placeholder="Username" required autofocus>
-                <label for="inputUserame">Username</label>
+              @if (!empty($error))
+              <div class="alert alert-warning alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>	
+                <strong>{{ $error }}</strong>
               </div>
-
-              <div class="form-label-group">
+              @endif
+              <div class="form-label-group mt-5">
                 <input type="email" id="inputEmail" class="form-control"  name ="email" placeholder="Email address" required>
                 <label for="inputEmail">Email address</label>
               </div>
@@ -135,15 +136,8 @@
                 <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
               </div>
-              
-              <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" >
-                <label for="inputConfirmPassword">Confirm password</label>
-              </div>
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-              <a class="d-block text-center mt-2 small" href="#">Sign In</a>
-              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase mt-5" type="submit">Login</button>              
             </form>
           </div>
         </div>
