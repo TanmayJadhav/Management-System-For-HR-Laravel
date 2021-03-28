@@ -154,7 +154,7 @@
                 
                 <div class="dropdown-divider"></div>
                 <a href="/logout" class="dropdown-item">
-                  <i class="ni ni-user-run"></i>
+                  <i class="fa fa-sign-out"></i>
                   <span>Logout</span>
                 </a>
               </div>

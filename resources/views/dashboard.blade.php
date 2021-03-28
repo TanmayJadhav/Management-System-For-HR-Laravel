@@ -25,91 +25,149 @@
           </div>
           <!-- Card stats -->
           <div class="row">
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-3 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Employees</h4>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-none d-md-block">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
+                        <i class="fas fa-users"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$employee_count}}</span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-3 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Managers</h4>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-none d-md-block">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
+                        <i class="fas fa-user-tie"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$manager_count}}</span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-3 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Departments</h4>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-none d-md-block">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                        <i class="ni ni-money-coins"></i>
+                        <i class="fas fa-building"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$department_count}}</span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-3 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects</h4>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-none d-md-block">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
+                        <i class="fas fa-project-diagram"></i>
                       </div>
                     </div>
                   </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$project_count}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Project Budget</h4>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                        <i class="fas fa-users"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="h2 mt-5 font-weight-bold mb-0">Rs {{$project_budget}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Managers</h4>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="h2 mt-5 font-weight-bold mb-0">2,356</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Departments</h4>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                        <i class="fas fa-building"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="h2 mt-5 font-weight-bold mb-0">924</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects</h4>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="h2 mt-5 font-weight-bold mb-0">49,65%</span>
                 </div>
               </div>
             </div>

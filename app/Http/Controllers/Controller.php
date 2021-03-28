@@ -11,9 +11,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
 }

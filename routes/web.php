@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
+
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\DepartmentController;
@@ -9,6 +9,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 Route::view('/', 'login')->name('login');
 Route::post('/', [UserController::class,'login']);
@@ -17,7 +18,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
     
-    Route::get('/dashboard', [Controller::class,'dashboard']);
+    Route::get('/dashboard', [DashboardController::class,'dashboard']);
 
     //Employees Routes
     Route::get('/employee/list', [EmployeeController::class,'get_employee_list'])->name('employee list');
