@@ -173,7 +173,7 @@
     <div class="row align-items-center">
         <div class="col">
         <div class="copyright text-center  text-lg  text-muted">
-            &copy; 2021 <a href="#" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            &copy; 2021 <a href="#" class="font-weight-bold ml-1" target="_blank">HR Management</a>
         </div>
         </div>
         

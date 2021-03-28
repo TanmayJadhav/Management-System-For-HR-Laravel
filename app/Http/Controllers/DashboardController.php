@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Project;
 use App\Models\Manager;
+use App\Models\Location;
 
 class DashboardController extends Controller
 {
@@ -18,9 +19,10 @@ class DashboardController extends Controller
         $project_count = Project::count();
         $department_count = Department::count();
         $project_budget = $this->IND_money_format(Project::sum('budget'));
-
+        $project_completed = Project::where('status','Completed')->count();
+        $company_location = Location::count();
         
-        return view('dashboard',compact('employee_count','manager_count','department_count','project_count','project_budget'));
+        return view('dashboard',compact('employee_count','manager_count','department_count','project_count','project_budget','project_completed','company_location'));
     }
 
     public function IND_money_format($number){

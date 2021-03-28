@@ -26,7 +26,7 @@
           <!-- Card stats -->
           <div class="row">
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
@@ -80,12 +80,12 @@
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects</h4>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects</h4><br>
                     </div>
                     <div class="col-auto d-none d-md-block">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
@@ -93,14 +93,14 @@
                       </div>
                     </div>
                   </div>
-                  <span class="h2 mt-5 font-weight-bold mb-0">{{$project_count}}</span>
+                  <span class="h2 mt-5 font-weight-bold ">{{$project_count}}</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
@@ -108,8 +108,8 @@
                       <h4 class="card-title text-uppercase text-muted mb-0">Total Project Budget</h4>
                     </div>
                     <div class="col-auto d-none d-md-block">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
+                      <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+                        <i class="fas fa-rupee-sign"></i>
                       </div>
                     </div>
                   </div>
@@ -118,56 +118,56 @@
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title text-uppercase text-muted mb-0">Total Managers</h4>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects Completed</h4>
                     </div>
                     <div class="col-auto d-none d-md-block">
-                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="fas fa-user-tie"></i>
+                      <div class="icon icon-shape bg-gradient-indigo text-white rounded-circle shadow">
+                        <i class="fas fa-tasks"></i>
                       </div>
                     </div>
                   </div>
-                  <span class="h2 mt-5 font-weight-bold mb-0">2,356</span>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$project_completed}}</span>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title text-uppercase text-muted mb-0">Total Departments</h4>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects Pending</h4>
                     </div>
                     <div class="col-auto d-none d-md-block">
-                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                        <i class="fas fa-building"></i>
+                      <div class="icon icon-shape bg-gradient-purple text-white rounded-circle shadow">
+                       <i class="fas fa-tasks-alt"></i> 
                       </div>
                     </div>
                   </div>
-                  <span class="h2 mt-5 font-weight-bold mb-0">924</span>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$project_count-$project_completed}}</span>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-6">
-              <div class="card card-stats">
+              <div class="card card-stats h-75">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h4 class="card-title text-uppercase text-muted mb-0">Total Projects</h4>
+                      <h4 class="card-title text-uppercase text-muted mb-0">Total Company Locations</h4>
                     </div>
                     <div class="col-auto d-none d-md-block">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="fas fa-project-diagram"></i>
+                      <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
+                        <i class="fa fa-map-marker"></i>
                       </div>
                     </div>
                   </div>
-                  <span class="h2 mt-5 font-weight-bold mb-0">49,65%</span>
+                  <span class="h2 mt-5 font-weight-bold mb-0">{{$company_location}}</span>
                 </div>
               </div>
             </div>
